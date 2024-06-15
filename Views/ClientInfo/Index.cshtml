@@ -1,0 +1,27 @@
+@model IEnumerable<MVC_Practice.ViewModels.ClientInfoViewModel>
+
+<h1>Client Information</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Address</th>
+            <th>Birthday</th>
+            <th>Occupation</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var client in Model)
+        {
+            <tr>
+                <td>@client.FirstName</td>
+                <td>@client.LastName</td>
+                <td>@client.Address</td>
+                <td>@client.Birthday?.ToString("d")</td>
+                <td>@client.Occupation</td>
+            </tr>
+        }
+    </tbody>
+</table>
